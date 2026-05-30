@@ -1,0 +1,6 @@
+[submodule "3rdparty/AISafetyLab"]
+	path = 3rdparty/AISafetyLab
+	url = git@github.com:M0rtzz/AISafetyLab.git
+[submodule "3rdparty/FastChat"]
+	path = 3rdparty/FastChat
+	url = git@github.com:M0rtzz/FastChat.git
