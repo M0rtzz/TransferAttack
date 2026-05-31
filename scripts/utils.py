@@ -9,10 +9,10 @@ def build_chat(query, model_name):
         opt = f'[INST] {query} [/INST]'
     elif model_name == 'mistral_system':
         opt = f'[INST] You are an Al assistant. Always assist with care, respect, and truth. Please respond with utmost utility yet securely and avoid harmful, unethical, prejudiced, or negative content. Also ensure replies promote fairness and positivity.\n\n{query} [/INST]'
-    elif model_name == 'llama3_system':
+    elif model_name in {'llama3_system', 'llama31_system'}:
         system_prompt = "You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.\n\nIf a question does not make any sense, or is not factually coherent, explain why instead of answering something not correct. If you don't know the answer to a question, please don't share false information."
         opt = f'<|start_header_id|>system<|end_header_id|>\n\n{system_prompt}<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n{query}<|eot_id|><|start_header_id|>assistant<|end_header_id|>'
-    elif model_name == 'llama3':
+    elif model_name in {'llama3', 'llama31'}:
         opt = f'<|start_header_id|>user<|end_header_id|>\n\n{query}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'
     elif model_name == 'gemma-7b-it':
         opt = f'<start_of_turn>user\n{query}<end_of_turn>\n<start_of_turn>model\n'
